@@ -1,80 +1,147 @@
-# 🏗 Scaffold-ETH 2
+# 🎮 Incentifi - Gamified Chore dApp
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+**A blockchain-powered gamification platform for household chores built for the XDC Vibe Coding Bootcamp 2025**
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+## 🌟 Overview
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+Incentifi transforms mundane household chores into an engaging, reward-based experience using blockchain technology. Parents can create chore tasks with token escrow, while children earn NFTs for completion and trade them for real-world rewards.
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+## 🚀 Key Features
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+- **📝 Task Management**: Parents create chore tasks with escrow tokens
+- **🎯 Task Acceptance**: Kids can browse and accept available tasks
+- **✅ Completion System**: Submit proof of completion for review
+- **🏆 NFT Rewards**: Earn unique NFTs for completed tasks
+- **🎲 Lucky Lottery**: 10% bonus chance for extra rewards
+- **🏅 Achievement Badges**: Dual NFT system with special achievement tokens
+- **⏰ Timed Escrow**: Automatic token release system
+- **💱 Reward Trading**: Exchange NFTs for real-world rewards
 
-## Requirements
+## 🛠 Technology Stack
 
-Before you begin, you need to install the following tools:
+- **Frontend**: NextJS with Tailwind CSS + daisyUI
+- **Smart Contracts**: Solidity on XDC Network
+- **Development**: Scaffold-ETH 2 framework
+- **Wallet**: RainbowKit integration
+- **Build Tool**: Hardhat
 
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
-
-## Quickstart
-
-To get started with Scaffold-ETH 2, follow the steps below:
-
-1. Install dependencies if it was skipped in CLI:
+## 🏗 Project Structure
 
 ```
-cd my-dapp-example
+incentifi/
+├── packages/
+│   ├── hardhat/          # Smart contracts and deployment
+│   │   ├── contracts/    # Solidity contracts
+│   │   └── deploy/       # Deployment scripts
+│   └── nextjs/           # Frontend application
+│       ├── app/          # Next.js app router
+│       └── components/   # React components
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (>= v20.18.3)
+- [Yarn](https://yarnpkg.com/) (v1 or v2+)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/incentifi.git
+cd incentifi
+```
+
+2. **Install dependencies**
+```bash
 yarn install
 ```
 
-2. Run a local network in the first terminal:
-
-```
+3. **Start local blockchain**
+```bash
 yarn chain
 ```
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
-
-```
+4. **Deploy contracts** (in a new terminal)
+```bash
 yarn deploy
 ```
 
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
-
-4. On a third terminal, start your NextJS app:
-
-```
+5. **Start the frontend** (in a new terminal)
+```bash
 yarn start
 ```
 
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
+6. **Visit the app**
+Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Run smart contract test with `yarn hardhat:test`
+## 🎯 Core Smart Contract Functions
 
-- Edit your smart contracts in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
+- `createTask()` - Parents create new chore tasks with escrow
+- `acceptTask()` - Children accept available tasks
+- `submitCompletion()` - Submit proof of task completion
+- `approveCompletion()` - Parents approve and release rewards
 
+## 🏆 XDC Vibe Coding Bootcamp 2025
 
-## Documentation
+This project was built for the XDC Vibe Coding Bootcamp (August 27-29, 2025) with focus on:
+- **Stablecoins & DeFi**: Token escrow and reward systems
+- **Real-world Problem**: Gamifying household responsibility
+- **XDC Network Integration**: Deployed on XDC mainnet
+- **Smart Contract Innovation**: Timed escrow with lottery mechanics
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
+**Submission Deadline**: September 1, 2025
 
-To know more about its features, check out our [website](https://scaffoldeth.io).
+## 🎮 How to Use
 
-## Contributing to Scaffold-ETH 2
+### For Parents
+1. Connect your wallet
+2. Navigate to Parent Dashboard
+3. Create new chore tasks with token rewards
+4. Review and approve completed tasks
+5. Manage family reward system
 
-We welcome contributions to Scaffold-ETH 2!
+### For Children
+1. Connect your wallet
+2. Browse available chore tasks
+3. Accept tasks you want to complete
+4. Submit completion proof
+5. Collect NFT rewards and trade for prizes
 
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+## 🧪 Testing
+
+Run the smart contract tests:
+```bash
+yarn hardhat:test
+```
+
+## 📦 Deployment
+
+Deploy to XDC Network:
+```bash
+yarn deploy --network xdc
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Scaffold-ETH 2](https://scaffoldeth.io/)
+- XDC Network for blockchain infrastructure
+- XDC Vibe Coding Bootcamp organizers
+
+---
+
+**Made with ❤️ for the XDC Vibe Coding Bootcamp 2025**

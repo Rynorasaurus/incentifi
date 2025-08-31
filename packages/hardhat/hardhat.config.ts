@@ -37,7 +37,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "xdcApothemTestnet",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -52,6 +52,11 @@ const config: HardhatUserConfig = {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
+    },
+    xdcApothemTestnet: {
+      url: "https://rpc.ankr.com/xdc_testnet",
+      accounts: [deployerPrivateKey],
+      chainId: 51,
     },
     mainnet: {
       url: "https://mainnet.rpc.buidlguidl.com",
@@ -129,6 +134,16 @@ const config: HardhatUserConfig = {
   // Configuration for harhdat-verify plugin
   etherscan: {
     apiKey: etherscanApiKey,
+    customChains: [
+      {
+        network: "xdcApothemTestnet",
+        chainId: 51,
+        urls: {
+          apiURL: "https://explorer.apothem.network/api",
+          browserURL: "https://explorer.apothem.network",
+        },
+      },
+    ],
   },
   // Configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
